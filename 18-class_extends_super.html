@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //ES6 类支持继承，你可以通过 extends 关键字创建子类，子类可以继承父类的属性和方法。
+      //ES6 类支持继承，你可以通过 extends 关键字创建子类，子类可以继承父类的属性和方法。
+      class User {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+          this.role = "user";
+        }
+        getUser() {
+          console.log(
+            `hello my name is ${this.name} and ${this.age} years old`
+          );
+        }
+        isUserValid() {
+          return Boolean(this.name && this.age);
+        }
+      }
 
-     
+      class Admin extends User {
+        constructor(name, age, permissions = []) {
+          super(name, age);
+          this.role = "admin";
+          this.permissions = permissions;
+        }
+        hasPermission(permission) {
+          return this.permission.includes(permission);
+        }
+      }
+
+      const user = new User("ben", 20);
+      const admin = new Admin("bob", 30, ["database"]);
     </script>
-</body>
+  </body>
 </html>
