@@ -7,6 +7,41 @@
     <title>Posts Demo</title>
   </head>
   <body>
+    <header class="site-header">
+      <h1>Posts Demo</h1>
+    </header>
+    <main class="container">
+      <section class="card">
+        <button id="btn-load" class="btn">Load posts</button>
+        <span id="status" class="status"></span>
+      </section>
+      <section class="card">
+        <h2>Create Post</h2>
+        <form id="create-form" class="form">
+          <label>
+            Title
+            <input type="text" id="title" placeholder="Enter title" required />
+          </label>
+          <label>
+            Body
+            <textarea
+              id="body"
+              placeholder="Write something"
+              rows="3"
+              required
+            ></textarea>
+          </label>
+          <div class="row">
+            <button type="submit">Submit</button>
+            <span id="create-status" class="status"></span>
+          </div>
+        </form>
+      </section>
+      <section class="card">
+        <h2>Posts <span id="count">0</span></h2>
+        <ul id="posts" class="items"></ul>
+      </section>
+    </main>
     <script src="./main.ts"></script>
   </body>
 </html>
