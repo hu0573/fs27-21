@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        // 定义一个类
+      // 定义一个类
+      class User {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        getUser() {
+          console.log(
+            `hello my name is ${this.name} and ${this.age} years old`
+          );
+        }
+        isUserValid() {
+          return Boolean(this.name && this.age);
+        }
+      }
 
+      const user = new User("John", 20);
+      user.getUser();
+      console.log(user.isUserValid());
     </script>
-</body>
+  </body>
 </html>
