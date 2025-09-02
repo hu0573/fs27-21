@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-     
+      function step1() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let isSuccess = true;
+            if (isSuccess) {
+              resolve("step1 completed");
+            } else {
+              reject("step1 failed");
+            }
+          }, 1000);
+        });
+      }
 
+      function step2() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let isSuccess = true;
+            if (isSuccess) {
+              resolve("step2 completed");
+            } else {
+              reject("step2 failed");
+            }
+          }, 1000);
+        });
+      }
+
+      function step3() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let isSuccess = true;
+            if (isSuccess) {
+              resolve("step3 completed");
+            } else {
+              reject("step3 failed");
+            }
+          }, 1000);
+        });
+      }
+
+      step1()
+        .then((result) => {
+          console.log(result);
+          return step2();
+        })
+        .then((result) => {
+          console.log(result);
+          return step3();
+        })
+        .then((result) => {
+          console.log(result);
+        });
     </script>
-</body>
+  </body>
 </html>
