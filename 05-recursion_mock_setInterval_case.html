@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <div></div>
-  <script>
-  
-  </script>
-</body>
-
+  <body>
+    <div id="time"></div>
+    <script>
+      function getTime() {
+        let elementTime = document.getElementById("time");
+        let date = new Date().toLocaleString();
+        elementTime.textContent = date;
+        setTimeout(getTime, 1000);
+      }
+      getTime();
+    </script>
+  </body>
 </html>
